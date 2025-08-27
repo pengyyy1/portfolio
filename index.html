@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>pengy1 • Portfolio</title>
+  <meta name="theme-color" content="#0f0f13" />
+  <meta name="description" content="Minimal scroll intro with performant warp and portfolio." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="violet">
+  <div class="hud safe" aria-label="Controls">
+    <div class="left">
+      <button class="chip" id="themeBtn" aria-haspopup="true" aria-expanded="false">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Theme</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span id="themeLabel">Violet</span>
+      </button>
+
+      <div class="menu" id="themeMenu" aria-expanded="false">
+        <div class="menu-list" role="menu" aria-label="Theme picker">
+          <div class="menu-title">Choose theme</div>
+          <button type="button" role="menuitem" data-theme="violet">Violet (Default)</button>
+          <button type="button" role="menuitem" data-theme="teal">Teal</button>
+          <button type="button" role="menuitem" data-theme="orange">Orange</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <button class="chip" id="contactBtn" aria-label="Scroll to contacts">
+        <span>Contact</span>
+      </button>
+    </div>
+  </div>
+
+  <section class="stage stage--black" aria-label="Start">
+    <div class="pin">
+      <div class="black-wrap safe" id="black">
+        <div class="grain" aria-hidden="true"></div>
+        <div class="scroll-cue" id="scrollCue" role="note" aria-live="polite">
+          <div>Scroll to begin</div>
+          <div class="arrow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage stage--intro" aria-label="Intro">
+    <div class="pin">
+      <div class="intro-wrap safe" id="intro">
+        <div class="stack" aria-hidden="false" aria-label="Hello this is my website">
+          <h1 class="line" data-from="0.00" data-to="0.28">Hello,</h1>
+          <h1 class="line" data-from="0.04" data-to="0.42">this</h1>
+          <h1 class="line" data-from="0.10" data-to="0.58">is</h1>
+          <h1 class="line" data-from="0.16" data-to="0.72">my</h1>
+          <h1 class="line accent" data-from="0.22" data-to="0.96">website</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage stage--warp" aria-label="Warp">
+    <div class="pin">
+      <div class="warp-wrap" id="warpWrap">
+        <canvas id="warpRings"></canvas>
+        <canvas id="warpStars"></canvas>
+        <div class="portal-overlay" id="portal" data-visible="false" aria-hidden="true">
+          <div class="portal-ring"></div>
+        </div>
+        <div class="time-display" id="timeDisplay">
+          <div id="myTime">My time: --:--:--</div>
+          <div id="yourTime">Your time: --:--:--</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage stage--portfolio portfolio-enter" aria-label="Portfolio" id="portfolio">
+    <div class="container safe">
+      <div class="hero-card">
+        <h2 class="hero-title">pengy1 - About Me</h2>
+        <p class="hero-sub">
+          I build things around games, data, and automation. Previously made multiplayer games, websites, AI revision apps, stock screener and more!
+        </p>
+
+        <div class="socials" id="contacts">
+          <a href="https://discord.com/users/708532003393503323" target="_blank" rel="noopener" aria-label="Discord"><img src="images/discord.svg" alt="Discord"></a>
+          <a href="https://github.com/pengyyy1" target="_blank" rel="noopener" aria-label="GitHub"><img src="images/github.svg" alt="GitHub"></a>
+        </div>
+
+        <div class="grid">
+          <article class="card col-8">
+            <h3>Exotic Notifier</h3>
+            <p>Discord bot that webscrapes data for alerting players on high-value in-game items. Sold multiple bots for a combined sum of +USD $500, with users reporting much success.</p>
+          </article>
+
+          <article class="card col-4">
+            <h3>Skills</h3>
+            <p>Experience with JavaScript, Python, CSS, Skript (Minecraft Plugin), Excel, Powerpoint.</p>
+          </article>
+
+          <article class="card col-6">
+            <h3>Pomodoro Timer</h3>
+            <p>Simple, useful and aesthetic Pomodoro timer with various settings, background and clean UI.</p>
+          </article>
+
+          <article class="card col-6">
+            <h3>Stock Screener</h3>
+            <p>Python stock screener with news filter, EMA's and SMA's and various other settings.</p>
+          </article>
+        </div>
+      </div>
+
+      <footer>
+        © <span id="year"></span> pengy1 - Made with scroll, math, and vibes.
+      </footer>
+    </div>
+  </section>
+
+  <script src="index.js"></script>
+  <script src="time.js"></script>
+</body>
+</html>
